@@ -87,6 +87,7 @@ func TestGetUrlsFromHTML(t *testing.T) {
 				return
 			} else if err == nil && tc.errorContains != "" {
 				t.Errorf("Test - %s FAIL expected error to contain: %v, got none.", name, tc.errorContains)
+				return
 			}
 
 			if !reflect.DeepEqual(actual, tc.expected) {

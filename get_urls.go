@@ -14,6 +14,7 @@ func getURLsFromHTML(htmlBody, rawURL string) ([]string, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse base url: %w", err)
 	}
+
 	reader := strings.NewReader(htmlBody)
 	parsedHTML, err := html.Parse(reader)
 	if err != nil {
@@ -45,5 +46,4 @@ func getURLSFromHTMLNodeRecursive(baseURL url.URL,htmlNode *html.Node, anchorTag
 	for child := htmlNode.FirstChild; child != nil; child = child.NextSibling {
 		getURLSFromHTMLNodeRecursive(baseURL, child, anchorTags)
 	}
-
 }
