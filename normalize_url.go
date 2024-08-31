@@ -18,7 +18,6 @@ func normalizeURL(inputURL string) (normalizedURL string, err error) {
 	}
 
 	normalizedURL = parsedUrl.Hostname() + parsedUrl.Path + query
-	normalizedURL = strings.TrimPrefix(normalizedURL, "www.")
 	normalizedURL = strings.TrimSuffix(normalizedURL, "/")
 	normalizedURL = strings.ToLower(normalizedURL)
 

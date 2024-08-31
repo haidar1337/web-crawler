@@ -16,7 +16,6 @@ func TestNormalizeURL(t *testing.T) {
 			"remove slashes": {inputURL: "youtube.com/", expected: "youtube.com"},
 			"url with path": {inputURL: "https://en.wikipedia.org/wiki/Go_(programming_language)", expected: "en.wikipedia.org/wiki/go_(programming_language)"},
 			"url with query": {inputURL: "https://google.com/search?q=dogs", expected: "google.com/search?q=dogs"},
-			"url with www": {inputURL: "http://www.google.com", expected: "google.com"},
 			"invalid url": {inputURL: ":\\invalidURL", expected: "", errorContains: "could not parse"},
 	}
 
